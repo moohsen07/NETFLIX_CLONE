@@ -5,7 +5,7 @@
       :src="`${baseImgUrl}${item.backdrop_path || item.poster_path}`"
       alt="No Poster Avillable"
     />
-    <div class="inner-hover shadow rounded p-3">
+    <div class="inner-hover shadow rounded p-2">
       <h6>{{ item.name || item.title }}</h6>
 
       <div class="card-icons d-flex position-relative">
@@ -94,6 +94,9 @@ export default {
 }
 
 @media (max-width: 500px) {
+  .item-card {
+    height: 100px;
+  }
   .item-card:hover {
     transform: scale(1.3);
   }

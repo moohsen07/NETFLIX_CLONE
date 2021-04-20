@@ -2,7 +2,7 @@
   <div class="sub-header">
     <div class="container-fluid">
       <div class="sub-header-wrapper d-flex">
-        <h1 class="font-weight-bold text-white">{{ title }}</h1>
+        <h2 class="font-weight-bold text-white">{{ title }}</h2>
         <div class="select-genre my-auto position-relative">
           <div
             class="label d-flex justify-content-between"
