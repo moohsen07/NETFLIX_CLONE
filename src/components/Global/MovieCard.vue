@@ -32,7 +32,7 @@
       </div>
       <div class="genres">
         <span
-          class="position-relative mr-3"
+          class="position-relative mr-2"
           v-for="genre in item.genre_ids"
           :key="genre"
         >
@@ -81,7 +81,7 @@ export default {
 @import url("https://fonts.googleapis.com/css2?family=Montserrat:wght@500&display=swap");
 .item-card {
   position: relative;
-  height: 125px;
+  height: 140px;
   transform-origin: bottom;
   transition: transform 0.5s ease 0.1s;
   cursor: pointer;
@@ -93,6 +93,11 @@ export default {
   z-index: 10;
 }
 
+@media (max-width: 500px) {
+  .item-card:hover {
+    transform: scale(1.3);
+  }
+}
 /* Inner-Hover */
 .inner-hover {
   position: relative;
@@ -207,7 +212,7 @@ export default {
   position: absolute;
   top: 50%;
   transform: translateY(-50%);
-  right: -7px;
+  right: -4px;
   width: 3px;
   height: 3px;
   border-radius: 50%;

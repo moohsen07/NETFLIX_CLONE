@@ -97,7 +97,7 @@ export default {
   -webkit-font-smoothing: antialiased;
   -webkit-background-clip: text;
   letter-spacing: -3px;
-  margin-top: -20px;
+  margin-top: -10px;
 }
 .hero p {
   max-width: 40%;
@@ -110,7 +110,10 @@ export default {
   background-color: rgba(109, 109, 110, 0.7);
 }
 
-@media (max-width: 1024px) {
+@media (max-width: 768px) {
+  .hero h1 {
+    font-size: 45px;
+  }
   .hero p {
     max-width: 100%;
   }

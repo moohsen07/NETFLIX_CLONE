@@ -1,5 +1,10 @@
 @import url('https://fonts.googleapis.com/css2?family=Cinzel:wght@400;600&display=swap');
 
+
+html {
+  overflow-x: hidden;
+}
+
 :root {
   --bg-main: #141414;
   --color-main: #E50914;
@@ -15,10 +20,6 @@ body {
 
 }
 
-.container-fluid {
-  padding-right: 40px;
-  padding-left: 40px;
-}
 
 .page {
   margin-top: 70px;
@@ -44,4 +45,12 @@ body {
 .sec-title h2 {
   font-size: 25px;
   font-weight: bold;
+}
+
+@media (min-width : 768px) {
+  .container-fluid {
+    padding-right: 40px;
+    padding-left: 40px;
+  }
+
 }
