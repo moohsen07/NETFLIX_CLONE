@@ -110,7 +110,7 @@ export default {
   methods: {
     openSearchBar() {
       this.searchBar = true;
-      window.setTimeout(() => this.$refs.searchField.focus(), 100);
+      setTimeout(() => this.$refs.searchField.focus(), 0);
     },
     reDirect(q) {
       if (!window.location.href.includes("search")) {
@@ -136,6 +136,11 @@ export default {
   },
   mounted() {
     window.addEventListener("scroll", this.handleScroll);
+    window.addEventListener("click", (e) => {
+      if (!e.target.closest(".search")) {
+        this.searchBar = false;
+      }
+    });
   },
   destroyed() {
     window.removeEventListener("scroll", this.handleScroll);
@@ -208,19 +213,20 @@ export default {
   background: rgba(0, 0, 0, 0.5);
   color: #fff;
   border: 1px solid #ccc;
+  border-radius: 5px;
   margin-right: 20px;
   padding: 5px 35px;
   width: 0;
   opacity: 0;
   visibility: hidden;
-  transition: all 0.5s ease-in-out;
+  transition: all 0.3s ease-in-out;
 }
 
 .navbar .search i {
   position: absolute;
   top: 10px;
   right: 10px;
-  transition: 0.5s ease-in-out 0.05s;
+  transition: 0.3s ease-in-out 0.05s;
 }
 .navbar .search.active input {
   width: fit-content;
