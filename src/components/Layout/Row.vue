@@ -4,23 +4,25 @@
       <div class="sec-title mb-3">
         <h2 class="position-relative">{{ title }}</h2>
       </div>
-      <swiper class="swiper" :options="swiperOption">
-        <swiper-slide v-for="item in data" :key="item.id">
-          <movie-card :item="item" />
-        </swiper-slide>
-      </swiper>
+      <div class="swiper" ref="swiper">
+        <div class="swiper-wrapper">
+          <div class="swiper-slide" v-for="item in data" :key="item.id">
+            <movie-card :item="item" />
+          </div>
+        </div>
+      </div>
     </div>
   </div>
 </template>
 
 <script>
 import axios from "axios";
-import { Swiper, SwiperSlide } from "vue-awesome-swiper";
+import Swiper from "swiper";
 import MovieCard from "@/components/Global/MovieCard.vue";
 import "swiper/swiper-bundle.css";
 export default {
   props: ["title", "fetchUrl"],
-  components: { Swiper, SwiperSlide, MovieCard },
+  components: { MovieCard },
   data() {
     return {
       swiperOption: {
@@ -57,16 +59,19 @@ export default {
   created() {
     this.getData();
   },
+  mounted() {
+    new Swiper(this.$refs.swiper, this.swiperOption);
+  },
 };
 </script>
 
 <style>
-.swiper-container {
+.swiper {
   overflow: visible;
   z-index: -1;
 }
-.movies-container:hover .swiper-container,
-.movies-container:first-child .swiper-container {
+.movies-container:hover .swiper,
+.movies-container:first-child .swiper {
   z-index: auto;
 }
 </style>
